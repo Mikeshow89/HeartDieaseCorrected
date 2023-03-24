@@ -1,0 +1,41 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming Township is a pandas DataFrame, print the column names
+print(Township.columns)
+
+# Get a summary of the Annual Household Income column
+print(Township['Annual Household Income'].describe())
+
+# Create a table of counts for History of Heart Disease column
+print(pd.crosstab(Township['History of Heart Disease'], columns='count'))
+
+# Create a bar plot of History of Heart Disease column
+plt.figure()
+plt.bar(pd.unique(Township['History of Heart Disease']), Township['History of Heart Disease'].value_counts())
+plt.xlabel('History of Heart Disease')
+plt.ylabel('Count')
+plt.title('Counts of History of Heart Disease')
+plt.show()
+
+# Create a table of counts for Home Size column
+print(pd.crosstab(Township['Home Size'], columns='count'))
+
+# Create a bar plot of Home Size column
+plt.figure()
+plt.bar(pd.unique(Township['Home Size']), Township['Home Size'].value_counts())
+plt.xlabel('Home Size')
+plt.ylabel('Count')
+plt.title('Counts of Home Size')
+plt.show()
+
+# Create a table of counts for Race column
+print(pd.crosstab(Township['Race'], columns='count'))
+
+# Create a bar plot of Race column
+plt.figure()
+plt.bar(pd.unique(Township['Race']), Township['Race'].value_counts())
+plt.xlabel('Race')
+plt.ylabel('Count')
+plt.title('Counts of Race')
+plt.show()
